@@ -15,12 +15,16 @@ The launch file will also launch the im_pub node which will publish an image on 
 
 In another terminal, type:
 ```
-ros2 run interview_homework frame_transf
+ros2 run interview_homework transform
 ```
 to see the transformation between the camera_optical_frame and the rotating_frame.
 
-The point 7 has been implemented through the drawer node:
-Make sure that the launch file has been executed to ensure that im_pub is running
+The point 7 has been implemented through the drawer node, which has been launched in the same launch file
+
+
+Typing:
 ```
-ros2 run interview_homework drawer
+ros2 run interview_homework ray_tracer 
 ```
+
+will open a colored image. Clicking on the image will print the (x, y) coordinates in the world frame (assuming Z=1) in the terminal, while simultaneously publishing these coordinates as a geometry_msgs::msg::Pose message on the /ray topic.
